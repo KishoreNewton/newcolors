@@ -13,14 +13,14 @@ class Palette extends Component {
     changeLevel(level){
         this.setState({ level })
     }
-    changeFormat(val){
-        this.setState({ format: val })
+    changeFormat(evt){
+        alert(evt.target.value)
     }
     render(){
         const { colors } = this.props.palette
-        const {level, format} = this.state
+        const {level} = this.state
         const colorBoxes = colors[level].map(color => (
-            <ColorBox background={color[format]} name={color.name} />
+            <ColorBox background={color.hex} name={color.name} />
         ))
         return(
             <div className="Palette">
