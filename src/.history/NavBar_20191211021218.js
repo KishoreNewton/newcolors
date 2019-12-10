@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Slider, { Range } from 'rc-slider'
 import 'rc-slider/assets/index.css'
-import { Link } from "react-router-dom"
+import Link from "react-router-dom"
 import Select from '@material-ui/core/Select'
 import "./NavBar.css"
 import { MenuItem, IconButton } from '@material-ui/core'
@@ -28,7 +28,7 @@ class NavBar extends Component{
         return(
             <header className="NavBar">
                 <div className="logo">
-                    <Link to='/'>BACK</Link>
+                    <Link to'/'>BACK</Link>
                 </div>
                 <div className="slider-container">
                 <span>Strength {level}</span>
