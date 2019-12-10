@@ -9,7 +9,7 @@ class PalletList extends Component {
       <div>
       <MiniPalette />
          {palettes.map(palette => (
-             <MiniPalette {...palette} />
+             
          ))}
       </div>
     )
