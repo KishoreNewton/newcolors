@@ -10,9 +10,11 @@ class App extends Component {
     console.log(generatePalette(seedColors[5]))
   return (
     <Switch>
-    <Route exact path="/" render={() => <h1>okay</h1>} />
-    <Route exact path="/palette/:id" render={() => <h1>okay2</h1>} />
-    </Switch>
+    <Route exact path="/" />
+    <Route exact path="/palette/:id" />
+    <div>
+      <Palette palette={generatePalette(seedColors[5])} />
+    </div>
   )}
 }
 
