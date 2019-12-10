@@ -42,7 +42,7 @@ class NavBar extends Component{
                         <MenuItem value="rgba">Rgba</MenuItem>
                     </Select>
                 </div>
-                <Snackbar anchorOrigin={{vertical: "bottom", horizontal: "left"}} open={this.state.open} autoHideDuration={3000} message={<span id="message-id">Color Code Changed {format.toUpperCase()}</span>}  ContentProps={{"aria-describedby": "message-id"}} onClose={this.closeSnackbar} action={[<IconButton onClick={this.closeSnackbar} color='inherit' key="close" aria-label='close'> <CloseIcon /></IconButton>]} />
+                <Snackbar anchorOrigin={{vertical: "bottom", horizontal: "left"}} open={this.state.open} autoHideDuration={3000} message={<span id="message-id">Color Code Changed{format.toUpperCase}</span>}  ContentProps={{"aria-describedby": "message-id"}} onClose={this.closeSnackbar} action={[<IconButton onClick={this.closeSnackbar} color='inherit' key="close" aria-label='close'> <CloseIcon /></IconButton>]} />
             </header>
         )
     }
