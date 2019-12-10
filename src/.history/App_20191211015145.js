@@ -7,8 +7,8 @@ import { Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   findPalette(id){
-   return seedColors.find(function(palette){
-      return palette.id === id
+    seedColors.find(function(palette){
+      
     })
   }
   render(){
@@ -16,10 +16,7 @@ class App extends Component {
   return (
     <Switch>
     <Route exact path="/" render={() => <h1>okay</h1>} />
-    <Route exact path="/palette/:id" render={routeProps => (
-      <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))} />
-    )}
-    />
+    <Route exact path="/palette/:id" render={() => <h1>okay2</h1>} />
     </Switch>
   )}
 }
