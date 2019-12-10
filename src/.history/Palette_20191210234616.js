@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ColorBox from "./ColorBox"
 import "./Palette.css"
-import NavBar from "./NavBar"
+import Navbar from "./NavBar"
 
 class Palette extends Component {
     constructor(props){
@@ -20,7 +20,7 @@ class Palette extends Component {
         ))
         return(
             <div className="Palette">
-            <NavBar level={level} changeLevel={this.changeLevel} />
+            <Navbar level={level} changeLevel={this.changeLevel} />
                 {/* NavBar goes Here */}
                 <div className="Palette-colors">
                     {colorBoxes}

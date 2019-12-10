@@ -1,0 +1,16 @@
+.slider{
+    width: 340px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.rc-slider-track{
+    background-color: black !important;
+}
+
+.NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 6vh;
+}

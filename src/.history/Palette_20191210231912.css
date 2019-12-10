@@ -1,0 +1,17 @@
+.Palette{
+    height: 100vh;
+}
+
+.Palette-colors{
+    height: 95%;
+}
+
+.slider{
+    width: 340px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.rc-slider-track{
+    background-color: rgb(245, 214, 214) !;
+}
