@@ -5,7 +5,7 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    margin-bottom: -3.9px;
+    margin-bottom: -3.5px;
 }
 
 .copy-button{
@@ -51,10 +51,4 @@
     border: none;
     right: 0px;
     bottom: 0px;
-    color: white;
-    width: 60px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    text-transform: uppercase;
 }
