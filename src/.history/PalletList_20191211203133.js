@@ -8,16 +8,10 @@ const styles = {
         backgroundColor: "blue",
         height: "100%",
         display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "center"
+        alignItems: "flex-start"
     },
     container: {
-        width: "50%",
-        display: "flex",
-        alignItems: "flex-start",
-        flexDirection: "column",
-        flexWrap: 'wrap',
-        border: "1px solid white"
+
     },
     nav: {
 

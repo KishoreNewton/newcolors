@@ -14,10 +14,7 @@ const styles = {
     container: {
         width: "50%",
         display: "flex",
-        alignItems: "flex-start",
-        flexDirection: "column",
-        flexWrap: 'wrap',
-        border: "1px solid white"
+        alignItems: "fx-start",
     },
     nav: {
 

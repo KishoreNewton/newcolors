@@ -5,25 +5,8 @@ import { withStyles } from "@material-ui/styles"
 
 const styles = {
     root: {
+
         backgroundColor: "blue",
-        height: "100%",
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "center"
-    },
-    container: {
-        width: "50%",
-        display: "flex",
-        alignItems: "flex-start",
-        flexDirection: "column",
-        flexWrap: 'wrap',
-        border: "1px solid white"
-    },
-    nav: {
-
-    },
-    palettes: {
-
     }
 
 }
@@ -37,12 +20,11 @@ class PalletList extends Component {
             <nav className={classes.nav}>
                 <h1>MultiFormat Color</h1>
             </nav>
-            <div className={classes.palettes}>
-              {palettes.map(palette => (
-                  <MiniPalette {...palette} />
-              ))}
-            </div>
         </div>
+        <MiniPalette />
+            {palettes.map(palette => (
+                <MiniPalette {...palette} />
+            ))}
       </div>
     )
   }
