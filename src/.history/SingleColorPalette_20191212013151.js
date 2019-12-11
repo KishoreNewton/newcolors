@@ -25,16 +25,15 @@ export default class SingleColorPalette extends Component {
     }
     render() {
         const { format } = this.state
-        const { id } = this.props.palette
         const colorBoxes = this.__shades.map(color => (
-            <ColorBox key={color.name} name={color.name} background={color[format]} showLink={false} />
+            <ColorBox key={color.id} name={color.name} background={color[format]} showLink={false} />
         ))
         return (
         <div className="SingleColorPalette Palette">
             <NavBar handleChange={this.changeFormat} showingAllColors={false} />
             <div className="Palette-colors">{colorBoxes}
                 <div className="go-back ColorBox">
-                    <Link className="back-button" to={`/palette/${id}`}>Go Back</Link>
+                    <Link className="back-button" to="/palette">Go Back</Link>
                 </div>
             </div>
         </div>

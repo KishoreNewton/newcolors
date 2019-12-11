@@ -39,12 +39,6 @@
 .copy-button {
     opacity: 0;
 }
-.back-button{
-    height: 30px;
-    background-color: black;
-    border-radius:7%;
-    text-decoration: none;
-}
 
 .ColorBox:hover .copy-button {
     opacity: 1;

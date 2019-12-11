@@ -27,7 +27,7 @@ export default class SingleColorPalette extends Component {
         const { format } = this.state
         const { id } = this.props.palette
         const colorBoxes = this.__shades.map(color => (
-            <ColorBox key={color.name} name={color.name} background={color[format]} showLink={false} />
+            <ColorBox key={color.id} name={color.name} background={color[format]} showLink={false} />
         ))
         return (
         <div className="SingleColorPalette Palette">

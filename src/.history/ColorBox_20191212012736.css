@@ -31,19 +31,18 @@
     background: rgba(255, 255, 255, 0.3);
     font-size: 1rem;
     line-height: 30px;
-    color: white;
+    color: black;
     text-transform: uppercase;
     border: none;
     cursor: pointer;
 }
 .copy-button {
     opacity: 0;
+    color: white;
 }
 .back-button{
-    height: 30px;
     background-color: black;
-    border-radius:7%;
-    text-decoration: none;
+    
 }
 
 .ColorBox:hover .copy-button {
