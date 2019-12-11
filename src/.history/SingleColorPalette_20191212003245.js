@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ColorBox from "./ColorBox"
 
 export default class SingleColorPalette extends Component {
     constructor(props){
@@ -11,18 +10,16 @@ export default class SingleColorPalette extends Component {
         let allColors = palette.colors
         for(let key in allColors){
             shades = shades.concat(
-                allColors[key].filter(color => color.id === colorToFilterBy)
+                allColors[key].filter()
             )
         }
-        return shades.slice(1)
+
+        return shades
     }
     render() {
-        const colorBoxes = this.__shades.map(color => (
-            <ColorBox key={color.id} name={color.name} background={color.hex} showLink={false} />
-        ))
         return (
-        <div className="Palette">
-            <div className="Palette-colors">{colorBoxes}</div>
+        <div>
+            <h1>Single Color Palette</h1>
         </div>
         )
     }
