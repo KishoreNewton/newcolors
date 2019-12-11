@@ -23,14 +23,14 @@ class NavBar extends Component{
         this.setState({ open: false })
     }
     render(){
-        const { level, changeLevel,showingAllColors } = this.props
+        const { level, changeLevel } = this.props
         const { format } = this.state
         return(
             <header className="NavBar">
                 <div className="logo">
                     <Link to='/'>BACK</Link>
                 </div>
-                {showingAllColors && (
+                {this.props.showingAllColors && (
                     <div className="slider-container">
                     <span>Strength {level}</span>
                     <div className="slider">

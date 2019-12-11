@@ -6,7 +6,6 @@ export default class SingleColorPalette extends Component {
     constructor(props){
         super(props)
         this.__shades = this.gatherShades(this.props.palette, this.props.colorId)
-        this.state = { format: "hex" }
         this.changeFormat = this.changeFormat.bind(this)
     }
     gatherShades(palette, colorToFilterBy){
@@ -23,13 +22,12 @@ export default class SingleColorPalette extends Component {
         this.setState({ format: val })
     }
     render() {
-        const { format } = this.state
         const colorBoxes = this.__shades.map(color => (
-            <ColorBox key={color.id} name={color.name} background={color[format]} showLink={false} />
+            <ColorBox key={color.id} name={color.name} background={color.hex} showLink={false} />
         ))
         return (
         <div className="Palette">
-            <NavBar handleChange={this.changeFormat} showingAllColors={false} />
+            <NavBar  />
             <div className="Palette-colors">{colorBoxes}</div>
         </div>
         )

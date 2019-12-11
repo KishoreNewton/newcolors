@@ -23,13 +23,12 @@ export default class SingleColorPalette extends Component {
         this.setState({ format: val })
     }
     render() {
-        const { format } = this.state
         const colorBoxes = this.__shades.map(color => (
-            <ColorBox key={color.id} name={color.name} background={color[format]} showLink={false} />
+            <ColorBox key={color.id} name={color.name} background={color.hex} showLink={false} />
         ))
         return (
         <div className="Palette">
-            <NavBar handleChange={this.changeFormat} showingAllColors={false} />
+            <NavBar handleChange={this.changeFormat} />
             <div className="Palette-colors">{colorBoxes}</div>
         </div>
         )

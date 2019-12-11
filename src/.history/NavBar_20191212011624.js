@@ -30,7 +30,7 @@ class NavBar extends Component{
                 <div className="logo">
                     <Link to='/'>BACK</Link>
                 </div>
-                {showingAllColors && (
+                {this.props.showingAllColors && (
                     <div className="slider-container">
                     <span>Strength {level}</span>
                     <div className="slider">
