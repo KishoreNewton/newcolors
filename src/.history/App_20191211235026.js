@@ -4,7 +4,7 @@ import seedColors from "./seedColors"
 import { generatePalette } from "./colorHelpers"
 import { Router, Route, Switch } from "react-router-dom"
 import PalletList from "./PalletList"
-import SingleColorPalette from "./SingleColorPalette"
+import SingleColorPalette form "./SingleColorPalette"
 
 
 class App extends Component {
