@@ -20,15 +20,10 @@ const styles = {
     },
     nav: {
       display: "flex",
-      width: "100%",
-      color: "white"
+      width: "100%"
     },
     palettes: {
-      boxSizing: "border-box",
-      width: "100%",
-      display: "grid",
-      gridTemplateColumns: "repeat(3, 30%)",
-      gridGap: "5%"
+
     }
 
 }

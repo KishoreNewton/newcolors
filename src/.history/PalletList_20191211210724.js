@@ -21,7 +21,7 @@ const styles = {
     nav: {
       display: "flex",
       width: "100%",
-      color: "white"
+
     },
     palettes: {
       boxSizing: "border-box",
