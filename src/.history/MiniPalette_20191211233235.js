@@ -8,6 +8,7 @@ const styles = {
         borderRadius: "5px",
         padding: "0.5rem",
         position: "relative",
+        overflow: "hidden",
         "&:hover":{
             cursor: "pointer"
         }
@@ -17,7 +18,6 @@ const styles = {
         height: "150px",
         width: "100%",
         borderRadius: "5px",
-        overflow: "hidden",
     },
     title: {
         display: "flex",

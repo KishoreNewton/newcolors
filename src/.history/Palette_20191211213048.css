@@ -1,9 +1,5 @@
-html, body, #app, #app>div {
-    height: 100%
-  }
-
 .Palette{
-    height: 100vh;
+    height: 100%;
     overflow: hidden !important;
 }
 

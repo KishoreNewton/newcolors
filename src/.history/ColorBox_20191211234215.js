@@ -31,9 +31,8 @@ class ColorBox extends Component{
                     </div>
                     <button className="copy-button">COPY</button>
                 </div>
-                <Link to="/" onClick={e => e.stopPropagation()}>
+                <Link>
                 <span className="see-more">MORE</span>
-                </Link>
             </div>
             </CopyToClipboard>
         )

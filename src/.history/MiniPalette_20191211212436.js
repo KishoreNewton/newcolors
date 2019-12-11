@@ -8,6 +8,7 @@ const styles = {
         borderRadius: "5px",
         padding: "0.5rem",
         position: "relative",
+        overflow: "hidden",
         "&:hover":{
             cursor: "pointer"
         }
@@ -39,7 +40,7 @@ const styles = {
         display: "inline-block",
         margin: "0 auto",
         position: "relative",
-        marginBottom: "-4.0px",
+        marginBottom: "-3.5px",
     }
 }
 
@@ -50,7 +51,7 @@ function MiniPalette(props){
     ))
     console.log(classes)
     return(
-        <div className={classes.root} onClick={props.handleClick}>
+        <div className={classes.root}>
             <div className={classes.colors}>
                 {miniColorBoxes}
             </div>
