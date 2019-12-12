@@ -1,0 +1,19 @@
+import React from 'react'
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+    root: {
+        height: "100px",
+        width: "100px"
+    }
+}
+
+function DraggableColorBox(props) {
+    return (
+        <div style={{backgroundColor: props.color}} className={props.classes.root}>
+            {props.color}
+        </div>
+    )
+}
+
+export default withStyles(styles)(DraggableColorBox)

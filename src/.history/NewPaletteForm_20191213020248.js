@@ -50,6 +50,7 @@ const styles = theme => ({
     },
     drawerHeader: {
       display: 'flex',
+      height: "100vh",
       alignItems: 'center',
       padding: '0 8px',
       ...theme.mixins.toolbar,
@@ -57,7 +58,7 @@ const styles = theme => ({
     },
     content: {
       flexGrow: 1,
-      height: "calc(100vh - 64px)",
+      height: "100vh !important",
       padding: theme.spacing.unit * 3,
       transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.sharp,
