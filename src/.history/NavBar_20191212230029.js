@@ -7,7 +7,7 @@ import { MenuItem, IconButton } from '@material-ui/core'
 import Snackbar from '@material-ui/core/Snackbar'
 import CloseIcon from '@material-ui/icons/Close'
 import { withStyles } from "@material-ui/styles"
-import styles from  "./styles/NavBarStyles"
+import styles from  "./NavBarStyles"
 
 class NavBar extends Component{
     constructor(props){

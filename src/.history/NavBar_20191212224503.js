@@ -7,8 +7,39 @@ import { MenuItem, IconButton } from '@material-ui/core'
 import Snackbar from '@material-ui/core/Snackbar'
 import CloseIcon from '@material-ui/icons/Close'
 import { withStyles } from "@material-ui/styles"
-import styles from  "./styles/NavBarStyles"
 
+const styles = {
+    slider: {
+        width: "340px",
+        margin: "0 10px",
+        display: "inline-block",
+    },
+    NavBar: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        height: "6vh",
+    },
+    
+    logo: {
+        marginRight: "15px",
+        padding: "0 30px",
+        fontSize: "22px",
+        backgroundColor: "#ECEFF1",
+        fontFamily: "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        "& a": {
+            textDecoration: "none",
+            color: "black",
+        }
+    },
+    selectContainer: {
+        marginLeft: "auto",
+        marginRight: "1rem",
+    },
+}
 class NavBar extends Component{
     constructor(props){
         super(props)
@@ -38,21 +69,21 @@ class NavBar extends Component{
         }
         const { format } = this.state
         return(
-            <header className={classes.NavBar}>
-                <div className={classes.logo}>
+            <header className="NavBar">
+                <div className="logo">
                     <Link to='/'>
                     {logo}
                     </Link>
                 </div>
                 {showingAllColors && (
-                    <div>
+                    <div className="slider-container">
                     <span>Strength {level}</span>
-                    <div className={classes.slider}>
+                    <div className="slider">
                         <Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
                     </div> 
                     </div>
                 )}
-                <div className={classes.selectContainer}>
+                <div className="select-container">
                     <Select defaultValue={format} onChange={this.handleFormatChange}  >
                         <MenuItem value="hex">Hex</MenuItem>
                         <MenuItem value="rgb">Rgb</MenuItem>
