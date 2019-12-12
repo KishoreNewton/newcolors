@@ -24,7 +24,6 @@ class NavBar extends Component{
     }
     
     render(){
-        const { level, changeLevel,showingAllColors } = this.props
         let logo
         if(showingAllColors){
             logo = <div>
@@ -35,12 +34,13 @@ class NavBar extends Component{
                         <Link to="/">MAIN</Link>
                 </div>
         }
+        const { level, changeLevel,showingAllColors } = this.props
         const { format } = this.state
         return(
             <header className="NavBar">
                 <div className="logo">
                     <Link to='/'>
-                    {logo}
+                    logo
                     </Link>
                 </div>
                 {showingAllColors && (

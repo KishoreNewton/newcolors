@@ -10,9 +10,9 @@ const styles = {
         display:  "flex",
         flexDirection: "column",
         overflow: 'hidden',
-    },
-    colors: {
-        height: "94.9%",
+    }
+    colors :{
+        height: "94.5%",
     }
 }
 
@@ -38,9 +38,9 @@ class Palette extends Component {
         ))
         return(
             <div className={classes.Palette}>
-            <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} showingAllColors backButton={false} />
+            <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} showingAllColors />
                 {/* NavBar goes Here */}
-                <div className={classes.colors}>
+                <div className="Palette-colors">
                     {colorBoxes}
                 </div>
             </div>

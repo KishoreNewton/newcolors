@@ -12,7 +12,7 @@ const styles = {
         overflow: 'hidden',
     },
     colors: {
-        height: "94.9%",
+        height: "94.4%",
     }
 }
 

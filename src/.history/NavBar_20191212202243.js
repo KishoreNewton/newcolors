@@ -40,7 +40,7 @@ class NavBar extends Component{
             <header className="NavBar">
                 <div className="logo">
                     <Link to='/'>
-                    {logo}
+                    logo
                     </Link>
                 </div>
                 {showingAllColors && (

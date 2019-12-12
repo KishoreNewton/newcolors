@@ -22,25 +22,24 @@ class NavBar extends Component{
     closeSnackbar(){
         this.setState({ open: false })
     }
-    
+    if(showingColors){
+        let logo
+        logo = <div>
+                    <Link to="/">BACK</Link>
+            </div>
+    } else {
+        logo = <div>
+                    <Link to="/">MAIN</Link>
+            </div>
+    }
     render(){
         const { level, changeLevel,showingAllColors } = this.props
-        let logo
-        if(showingAllColors){
-            logo = <div>
-                        <Link to="/">BACK</Link>
-                </div>
-        } else {
-            logo = <div>
-                        <Link to="/">MAIN</Link>
-                </div>
-        }
         const { format } = this.state
         return(
             <header className="NavBar">
                 <div className="logo">
                     <Link to='/'>
-                    {logo}
+                    logo
                     </Link>
                 </div>
                 {showingAllColors && (

@@ -9,10 +9,6 @@ const styles = {
         height: "100vh",
         display:  "flex",
         flexDirection: "column",
-        overflow: 'hidden',
-    },
-    colors: {
-        height: "94.9%",
     }
 }
 
@@ -30,17 +26,16 @@ class Palette extends Component {
         this.setState({ format: val })
     }
     render(){
-        const { colors, id } = this.props.palette
-        const { classes } = this.props
+        const { colors, id, classes } = this.props.palette
         const {level, format} = this.state
         const colorBoxes = colors[level].map(color => (
             <ColorBox background={color[format]} name={color.name} key={color.id} moreUrl={`/palette/${id}/${color.id}`} showingFullPalette={true} />
         ))
         return(
             <div className={classes.Palette}>
-            <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} showingAllColors backButton={false} />
+            <NavBar level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat} showingAllColors />
                 {/* NavBar goes Here */}
-                <div className={classes.colors}>
+                <div className="Palette-colors">
                     {colorBoxes}
                 </div>
             </div>
