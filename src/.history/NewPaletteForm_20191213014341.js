@@ -78,10 +78,9 @@ const styles = theme => ({
           this.state =  {
               open: true,
               currentColor: " teal",
-              colors: ["purple", "#E15764"]
+              color: ["purple", "#E15764"]
           }
           this.updateCurrentColor = this.updateCurrentColor.bind(this)
-          this.addNewColor = this.addNewColor.bind(this)
       }
     state = {
       open: false,
@@ -100,7 +99,7 @@ const styles = theme => ({
     }
 
     addNewColor(){
-        this.setState({colors: [...this.state.colors, this.state.currentColor]})
+        this.setState({colors: [...colors, this.state.currentColor]})
     }
   
     render() {
@@ -152,7 +151,7 @@ const styles = theme => ({
                 <Button variant="contained" color="primary" >RANDOM</Button>
             </div>    
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
-            <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} onClick={this.addNewColor}>ADD</Button>
+            <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}}>ADD</Button>
             
           </Drawer>
           <main
@@ -163,7 +162,7 @@ const styles = theme => ({
             <div className={classes.drawerHeader} />
             <ul>
                 {this.state.colors.map(color => (
-                    <li style={{backgroundColor: color}}>{color}</li>
+                    <li>{color}</li>
                 ))}
             </ul>
           </main>

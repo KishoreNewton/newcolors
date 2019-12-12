@@ -81,7 +81,6 @@ const styles = theme => ({
               colors: ["purple", "#E15764"]
           }
           this.updateCurrentColor = this.updateCurrentColor.bind(this)
-          this.addNewColor = this.addNewColor.bind(this)
       }
     state = {
       open: false,
@@ -163,7 +162,7 @@ const styles = theme => ({
             <div className={classes.drawerHeader} />
             <ul>
                 {this.state.colors.map(color => (
-                    <li style={{backgroundColor: color}}>{color}</li>
+                    <li>{color}</li>
                 ))}
             </ul>
           </main>

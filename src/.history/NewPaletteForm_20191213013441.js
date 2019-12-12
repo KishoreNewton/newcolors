@@ -77,11 +77,8 @@ const styles = theme => ({
           super(props)
           this.state =  {
               open: true,
-              currentColor: " teal",
-              colors: ["purple", "#E15764"]
+              currentColor: " teal"
           }
-          this.updateCurrentColor = this.updateCurrentColor.bind(this)
-          this.addNewColor = this.addNewColor.bind(this)
       }
     state = {
       open: false,
@@ -94,14 +91,6 @@ const styles = theme => ({
     handleDrawerClose = () => {
       this.setState({ open: false });
     };
-
-    updateCurrentColor(newColor){
-        this.setState({currentColor: newColor.hex})
-    }
-
-    addNewColor(){
-        this.setState({colors: [...this.state.colors, this.state.currentColor]})
-    }
   
     render() {
       const { classes, theme } = this.props;
@@ -151,8 +140,8 @@ const styles = theme => ({
                 <Button variant="contained" color="secondary" >CLEAR</Button>
                 <Button variant="contained" color="primary" >RANDOM</Button>
             </div>    
-            <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
-            <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} onClick={this.addNewColor}>ADD</Button>
+            <ChromePicker color="purple" onChangeComplete={(newColor) => console.log(newColor)} />
+            <Button variant="contained" color="primary">ADD</Button>
             
           </Drawer>
           <main
@@ -161,11 +150,6 @@ const styles = theme => ({
             })}
           >
             <div className={classes.drawerHeader} />
-            <ul>
-                {this.state.colors.map(color => (
-                    <li style={{backgroundColor: color}}>{color}</li>
-                ))}
-            </ul>
           </main>
         </div>
       );

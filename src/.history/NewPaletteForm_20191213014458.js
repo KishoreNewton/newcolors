@@ -163,7 +163,7 @@ const styles = theme => ({
             <div className={classes.drawerHeader} />
             <ul>
                 {this.state.colors.map(color => (
-                    <li style={{backgroundColor: color}}>{color}</li>
+                    <li>{color}</li>
                 ))}
             </ul>
           </main>
