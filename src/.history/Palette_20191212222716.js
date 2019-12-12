@@ -5,6 +5,17 @@ import NavBar from "./NavBar"
 import { withStyles } from "@material-ui/styles"
 import styles from "./styles/PaletteStyles"
 
+const styles = {
+    Palette: {
+        height: "100vh",
+        display:  "flex",
+        flexDirection: "column",
+        overflow: 'hidden',
+    },
+    colors: {
+        height: "94.9%",
+    }
+}
 
 class Palette extends Component {
     constructor(props){

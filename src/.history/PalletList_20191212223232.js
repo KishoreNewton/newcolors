@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import MiniPalette from "./MiniPalette"
 import { withStyles } from "@material-ui/styles"
-import styles from "./styles/PaletteListStyles"
 class PalletList extends Component {
   goToPalette(id){
     this.props.history.push(`/palette/${id}`)
