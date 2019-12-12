@@ -107,8 +107,7 @@ const styles ={
             textTransform: "uppercase"
         },
         "& p": {
-            fontSize: "2rem",
-            fontWeight: "100"
+            fontSize: "2rem"
         }
     },
     showMessage: {

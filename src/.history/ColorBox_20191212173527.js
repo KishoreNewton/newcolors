@@ -104,11 +104,7 @@ const styles ={
             textAlign: "center",
             marginBottom: "0",
             padding: "1rem",
-            textTransform: "uppercase"
-        },
-        "& p": {
-            fontSize: "2rem",
-            fontWeight: "100"
+            textTransform: ""
         }
     },
     showMessage: {

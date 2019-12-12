@@ -96,20 +96,7 @@ const styles ={
         transform: "scale(0.1)",
         opacity: "0",
         color: "white",
-        "& h1": {
-            fontWeight: "400",
-            textShadow: "1px 2px black",
-            background: "rgba(255, 255, 255, 0.2)",
-            width: "100%",
-            textAlign: "center",
-            marginBottom: "0",
-            padding: "1rem",
-            textTransform: "uppercase"
-        },
-        "& p": {
-            fontSize: "2rem",
-            fontWeight: "100"
-        }
+        "& h1"
     },
     showMessage: {
         opacity: "1",
