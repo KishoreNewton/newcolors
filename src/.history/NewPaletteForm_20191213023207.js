@@ -82,23 +82,19 @@ const styles = theme => ({
               open: true,
               currentColor: " teal",
               newName: "",
-              colors: []
+              colors: ["purple", "#E15764"]
           }
           this.updateCurrentColor = this.updateCurrentColor.bind(this)
           this.addNewColor = this.addNewColor.bind(this)
           this.handleChange =this.handleChange.bind(this)
       }
       componentDidMount() {
-        ValidatorForm.addValidationRule('isColorNameUnique', (value) => 
-            this.state.colors.every(
-                ({name}) => name.toLowerCase() !== value.toLowerCase()
-            )
-        );
-        ValidatorForm.addValidationRule('isColorUnique', (value) => 
-            this.state.colors.every(
-                ({color}) => color !== this.state.currentColor
-            )
-        );
+        ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
+            if (value !== this.state.user.password) {
+                return false;
+            }
+            return true;
+        });
     }
     state = {
       open: false,
@@ -118,7 +114,7 @@ const styles = theme => ({
 
     addNewColor(){
         const newColor = { color: this.state.currentColor, name: this.state.newName }
-        this.setState({colors: [...this.state.colors, newColor], newName: ""})
+        this.setState({colors: [...this.state.colors, newColor]})
     }
 
     handleChange(evt){
@@ -175,7 +171,7 @@ const styles = theme => ({
             </div>    
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
             <ValidatorForm onSubmit={this.addNewColor}> 
-                <TextValidator  value={this.state.newName} onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
+                <TextValidator  value={this.state.newName} onChange={this.handleChange} validators={["required", "isEmail"]} errorMessages={["this field is required", "not a valid email"]} />
                 <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit">ADD</Button>
             </ValidatorForm>
             

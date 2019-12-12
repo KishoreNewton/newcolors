@@ -82,24 +82,11 @@ const styles = theme => ({
               open: true,
               currentColor: " teal",
               newName: "",
-              colors: []
+              colors: ["purple", "#E15764"]
           }
           this.updateCurrentColor = this.updateCurrentColor.bind(this)
           this.addNewColor = this.addNewColor.bind(this)
-          this.handleChange =this.handleChange.bind(this)
       }
-      componentDidMount() {
-        ValidatorForm.addValidationRule('isColorNameUnique', (value) => 
-            this.state.colors.every(
-                ({name}) => name.toLowerCase() !== value.toLowerCase()
-            )
-        );
-        ValidatorForm.addValidationRule('isColorUnique', (value) => 
-            this.state.colors.every(
-                ({color}) => color !== this.state.currentColor
-            )
-        );
-    }
     state = {
       open: false,
     };
@@ -117,8 +104,7 @@ const styles = theme => ({
     }
 
     addNewColor(){
-        const newColor = { color: this.state.currentColor, name: this.state.newName }
-        this.setState({colors: [...this.state.colors, newColor], newName: ""})
+        this.setState({colors: [...this.state.colors, this.state.currentColor]})
     }
 
     handleChange(evt){
@@ -174,11 +160,10 @@ const styles = theme => ({
                 <Button variant="contained" color="primary" >RANDOM</Button>
             </div>    
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
-            <ValidatorForm onSubmit={this.addNewColor}> 
-                <TextValidator  value={this.state.newName} onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
-                <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit">ADD</Button>
+            <ValidatorForm>
+                <TextValidator  value={this.state.newName} onChange={this.handleChange} />
             </ValidatorForm>
-            
+            <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} onClick={this.addNewColor}>ADD</Button>
             
           </Drawer>
           <main
@@ -188,7 +173,7 @@ const styles = theme => ({
           >
             <div className={classes.drawerHeader} />
                 {this.state.colors.map(color => (
-                   <DraggableColorBox color={color.color} name={color.name} /> 
+                   <DraggableColorBox color={color} /> 
                 ))}
           </main>
         </div>

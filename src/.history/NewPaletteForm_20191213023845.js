@@ -96,7 +96,7 @@ const styles = theme => ({
         );
         ValidatorForm.addValidationRule('isColorUnique', (value) => 
             this.state.colors.every(
-                ({color}) => color !== this.state.currentColor
+                ({name}) => color !== this.state.color
             )
         );
     }
@@ -118,7 +118,7 @@ const styles = theme => ({
 
     addNewColor(){
         const newColor = { color: this.state.currentColor, name: this.state.newName }
-        this.setState({colors: [...this.state.colors, newColor], newName: ""})
+        this.setState({colors: [...this.state.colors, newColor]})
     }
 
     handleChange(evt){
@@ -175,7 +175,7 @@ const styles = theme => ({
             </div>    
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
             <ValidatorForm onSubmit={this.addNewColor}> 
-                <TextValidator  value={this.state.newName} onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
+                <TextValidator  value={this.state.newName} onChange={this.handleChange} validators={["required", "isColorNameUnique"]} errorMessages={["this field is required", "Color name must be unique"]} />
                 <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit">ADD</Button>
             </ValidatorForm>
             

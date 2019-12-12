@@ -96,7 +96,7 @@ const styles = theme => ({
         );
         ValidatorForm.addValidationRule('isColorUnique', (value) => 
             this.state.colors.every(
-                ({color}) => color !== this.state.currentColor
+                ({name}) => colors !== this.state.currentColor
             )
         );
     }
@@ -118,7 +118,7 @@ const styles = theme => ({
 
     addNewColor(){
         const newColor = { color: this.state.currentColor, name: this.state.newName }
-        this.setState({colors: [...this.state.colors, newColor], newName: ""})
+        this.setState({colors: [...this.state.colors, newColor]})
     }
 
     handleChange(evt){
