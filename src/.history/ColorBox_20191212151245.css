@@ -67,10 +67,10 @@
 }
 
 .dark-text{
-    color: black;
+    color: ;
 }
 
-.ColorBox.dark-text{
+.ColorBox .dark-text{
     color: black;
 }
 

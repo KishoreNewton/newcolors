@@ -25,8 +25,8 @@ class ColorBox extends Component{
             <div className='ColorBox' style={{ background}}>
                 <div className={`copy-overlay ${copied && "show"} `} style={{background}} />
                 <div className={`copy-msg ${copied && "show"} `}>
-                    <h1 className={isLightColor && "dark-text"}>copied</h1>
-                    <p className={isLightColor && "dark-text"}>{background}</p>
+                    <h1>copied</h1>
+                    <p>{background}</p>
                 </div>
                 <div className="copy-container">
                     <div className="box-content">
@@ -36,7 +36,7 @@ class ColorBox extends Component{
                 </div>
                 {showLink &&(
                 <Link to={moreUrl} onClick={e => e.stopPropagation()}>
-                <span className={`see-more ${isLightColor && "dark-text"}`}>MORE</span>
+                <span className="see-more">MORE</span>
                 </Link>
                 )}
             </div>

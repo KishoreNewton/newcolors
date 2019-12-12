@@ -70,8 +70,9 @@
     color: black;
 }
 
-.ColorBox.dark-text{
+.ColorBox.darked-text{
     color: black;
+    background-color: rgba(68, 68, 68, 0.3)
 }
 
 .see-more {
