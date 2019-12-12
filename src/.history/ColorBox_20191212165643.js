@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/styles"
 const styles ={
     ColorBox: {
         width: "20%",
-        height: props => props.showingFullPalette ? "25%" : "50%",
+        height: "25%",
         margin: "0 auto",
         display: "inline-block",
         position: "relative",
@@ -73,12 +73,14 @@ class ColorBox extends Component{
     render(){
         const { name, background, paletteId, id, moreUrl, showingFullPalette, classes } = this.props
         const { copied } = this.state
+        const isDarkColor = chroma(background).luminance() <= 0.35
+        const isLightColor = chroma(background).luminance() >= 0.35
         return(
             <CopyToClipboard text={background} onCopy={this.changeCopyState} >
             <div className={classes.ColorBox} style={{ background}}>
                 <div className={`copy-overlay ${copied && "show"} `} style={{background}} />
                 <div className={`copy-msg ${copied && "show"} `}>
-                    <h1 className={classes.colorName}>copied</h1>
+                    <h1 className={isLightColor && "dark-text"}>copied</h1>
                     <p className={classes.copyText}>{background}</p>
                 </div>
                 <div className="copy-container">
