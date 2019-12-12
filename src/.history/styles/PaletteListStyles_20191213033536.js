@@ -9,6 +9,7 @@ export default {
     },
     container: {
         width: "70%",
+        overflow: "hidden",
         display: "flex",
         alignItems: "flex-start",
         flexDirection: "column",

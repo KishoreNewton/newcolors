@@ -13,17 +13,16 @@ class App extends Component {
     super(props)
     this.state = { palettes: seedColors }
     this.savePalette = this.savePalette.bind(this)
-    this.findPalette = this.findPalette.bind(this)
   }
 
   findPalette(id){
-   return this.state.palettes.find(function(palette){
+   return seedColors.find(function(palette){
       return palette.id === id
     })
   }
 
   savePalette(newPalette){
-    this.setState({palettes: [...this.state.palettes, newPalette]})
+    
   }
 
   render(){
@@ -34,7 +33,7 @@ class App extends Component {
     <Route path="/palette/:paletteId/:colorId" render={routeProps => (
       <SingleColorPalette colorId={routeProps.match.params.colorId} palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))} />
     )} />
-    <Route exact path="/" render={(routeProps) => <PalletList palettes={this.state.palettes} {...routeProps} />} />
+    <Route exact path="/" render={(routeProps) => <PalletList palettes={this.state.palette} {...routeProps} />} />
     <Route exact path="/palette/:id" render={routeProps => (
       <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))} />
     )}

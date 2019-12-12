@@ -17,13 +17,13 @@ class App extends Component {
   }
 
   findPalette(id){
-   return this.state.palettes.find(function(palette){
+   return this.state.palettes.find.find(function(palette){
       return palette.id === id
     })
   }
 
   savePalette(newPalette){
-    this.setState({palettes: [...this.state.palettes, newPalette]})
+    
   }
 
   render(){

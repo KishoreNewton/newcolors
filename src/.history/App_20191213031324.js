@@ -13,17 +13,16 @@ class App extends Component {
     super(props)
     this.state = { palettes: seedColors }
     this.savePalette = this.savePalette.bind(this)
-    this.findPalette = this.findPalette.bind(this)
   }
 
   findPalette(id){
-   return this.state.palettes.find(function(palette){
+   return seedColors.find(function(palette){
       return palette.id === id
     })
   }
 
   savePalette(newPalette){
-    this.setState({palettes: [...this.state.palettes, newPalette]})
+    
   }
 
   render(){
