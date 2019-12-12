@@ -129,13 +129,9 @@ const styles = theme => ({
             <Typography variant="h4">
                 Create Your Colors
             </Typography>
-            <div>
-                <Button variant="contained" color="secondary" >CLEAR</Button>
-                <Button variant="contained" color="primary" >RANDOM</Button>
-            </div>    
+            <Button variant="contained" color="secondary" >CLEAR</Button>
+            <Button variant="contained" color="primary" >CLEAR</Button>
             <ChromePicker color="purple" onChangeComplete={(newColor) => console.log(newColor)} />
-            <Button variant="contained" color="primary">ADD</Button>
-            
           </Drawer>
           <main
             className={classNames(classes.content, {

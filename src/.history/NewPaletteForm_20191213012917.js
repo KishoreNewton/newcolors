@@ -134,7 +134,7 @@ const styles = theme => ({
                 <Button variant="contained" color="primary" >RANDOM</Button>
             </div>    
             <ChromePicker color="purple" onChangeComplete={(newColor) => console.log(newColor)} />
-            <Button variant="contained" color="primary">ADD</Button>
+            <Button variant="contained">ADD</Button>
             
           </Drawer>
           <main

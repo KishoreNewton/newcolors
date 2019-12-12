@@ -10,10 +10,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import { ChromePicker } from "react-color"
-import { Button } from '@material-ui/core' 
 
 
-const drawerWidth = 400
+const drawerWidth = 240
 
 const styles = theme => ({
     root: {
@@ -126,16 +125,7 @@ const styles = theme => ({
                 <ChevronLeftIcon />
               </IconButton>
             </div>
-            <Typography variant="h4">
-                Create Your Colors
-            </Typography>
-            <div>
-                <Button variant="contained" color="secondary" >CLEAR</Button>
-                <Button variant="contained" color="primary" >RANDOM</Button>
-            </div>    
-            <ChromePicker color="purple" onChangeComplete={(newColor) => console.log(newColor)} />
-            <Button variant="contained" color="primary">ADD</Button>
-            
+           
           </Drawer>
           <main
             className={classNames(classes.content, {
@@ -143,6 +133,7 @@ const styles = theme => ({
             })}
           >
             <div className={classes.drawerHeader} />
+            <ChromePicker
           </main>
         </div>
       );
