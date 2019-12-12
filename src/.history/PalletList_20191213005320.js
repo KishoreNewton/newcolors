@@ -14,9 +14,6 @@ class PalletList extends Component {
         <div className={classes.container}>
             <nav className={classes.nav}>
                 <h1>MultiFormat Color</h1>
-                <Link to="/create-new-colors">
-                  CREATE YOUR OWN
-                </Link>
             </nav>
             <div className={classes.palettes}>
               {palettes.map(palette => (

@@ -17,13 +17,9 @@ export default {
     nav: {
       display: "flex",
       width: "100%",
-      color: "white",
+      color: "white"
       justifyContent: "space-between",
-      alignItems: "center",
-      "& a": {
-          color: "white",
-          textDecoration: "none"
-      }
+      alignItems: "center"
     },
     palettes: {
       boxSizing: "border-box",

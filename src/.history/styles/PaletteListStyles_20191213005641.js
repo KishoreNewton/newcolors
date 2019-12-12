@@ -19,10 +19,10 @@ export default {
       width: "100%",
       color: "white",
       justifyContent: "space-between",
-      alignItems: "center",
+      alignItems: "center"
       "& a": {
           color: "white",
-          textDecoration: "none"
+          text-decoration: "none"
       }
     },
     palettes: {
