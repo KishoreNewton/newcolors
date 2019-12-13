@@ -7,8 +7,10 @@ import ColorPickerForm from "./ColorPickerForm"
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import { ChromePicker } from "react-color"
 import { Button } from '@material-ui/core' 
 import DraggableColorList from "./DraggableColorList"
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
 import { arrayMove } from 'react-sortable-hoc'
 
 
@@ -80,8 +82,11 @@ const styles = theme => ({
           super(props)
           this.state =  {
               open: true,
+              currentColor: "teal",
+              newColorName: "",
               colors: this.props.palettes[0].colors,
           }
+          this.updateCurrentColor = this.updateCurrentColor.bind(this)
           this.addNewColor = this.addNewColor.bind(this)
           this.handleChange =this.handleChange.bind(this)
           this.handleSubmit = this.handleSubmit.bind(this)
@@ -89,7 +94,21 @@ const styles = theme => ({
           this.clearColors = this.clearColors.bind(this)
           this.addRandomColor = this.addRandomColor.bind(this)
       }
-      
+      componentDidMount() {
+        ValidatorForm.addValidationRule('isColorNameUnique', (value) => 
+            this.state.colors.every(
+                ({name}) => name.toLowerCase() !== value.toLowerCase()
+            )
+        );
+        ValidatorForm.addValidationRule('isColorUnique', (value) => 
+            this.state.colors.every(({ color }) => color !== this.state.currentColor
+            )
+        );
+        ValidatorForm.addValidationRule('isPaletteNameUnique', (value) => 
+            this.props.palettes.every(({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
+            )
+        );
+    }
     state = {
       open: false,
     };
@@ -102,7 +121,12 @@ const styles = theme => ({
       this.setState({ open: false });
     };
 
-    addNewColor(newColor){
+    updateCurrentColor(newColor){
+        this.setState({currentColor: newColor.hex})
+    }
+
+    addNewColor(){
+        const newColor = { color: this.state.currentColor, name: this.state.newColorName }
         this.setState({colors: [...this.state.colors, newColor], newColorName: ""})
     }
 
@@ -166,7 +190,7 @@ const styles = theme => ({
                 <Button variant="contained" color="secondary" onClick={this.clearColors} >CLEAR</Button>
                 <Button variant="contained" color="primary" onClick={this.addRandomColor} disabled={paletteIsFull}>RANDOM</Button>
             </div>    
-            <ColorPickerForm paletteIsFull={paletteIsFull} addNewColor={this.addNewColor} colors={colors} />
+            <ColorPickerForm paletteIsFull={paletteIsFull} />
           </Drawer>
           <main
             className={classNames(classes.content, {
