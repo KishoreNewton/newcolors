@@ -1,6 +1,7 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import DeleteIcon from '@material-ui/icons/Delete'
+import { DeviceSignalWifi1BarLock } from 'material-ui/svg-icons'
 
 const styles = {
     root: {
@@ -12,8 +13,7 @@ const styles = {
             cursor: "pointer",
             marginBottom: "-3.9px",
             "&:hover svg": {
-                color: "white",
-                transform: "scale(1.3)"
+                color: "white"
             }
         },
         boxContent: {
@@ -30,9 +30,9 @@ const styles = {
             justifyContent: "space-between",
         },
         deleteIcon:{
-            color: "black",
-            transition: "all 0.3s ease-in-out"
+            color: DeviceSignalWifi1BarLock,
         }
+
     }
 
 

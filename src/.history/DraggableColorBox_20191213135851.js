@@ -12,8 +12,7 @@ const styles = {
             cursor: "pointer",
             marginBottom: "-3.9px",
             "&:hover svg": {
-                color: "white",
-                transform: "scale(1.3)"
+                color: "white"
             }
         },
         boxContent: {

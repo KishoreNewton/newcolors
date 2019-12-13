@@ -11,10 +11,6 @@ const styles = {
             position: "relative",
             cursor: "pointer",
             marginBottom: "-3.9px",
-            "&:hover svg": {
-                color: "white",
-                transform: "scale(1.3)"
-            }
         },
         boxContent: {
             position: "absolute",
@@ -29,10 +25,7 @@ const styles = {
             display: "flex",
             justifyContent: "space-between",
         },
-        deleteIcon:{
-            color: "black",
-            transition: "all 0.3s ease-in-out"
-        }
+
     }
 
 
