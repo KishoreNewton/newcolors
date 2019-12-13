@@ -146,9 +146,9 @@ const styles = theme => ({
             colors: this.state.colors.filter(color => color.name !== colorName)
         })
     }
-    onSortEnd = ({oldIndex, newIndex}) => {
-        this.setState(({ colors }) => ({
-            colors: arrayMove(colors, oldIndex, newIndex)
+    onSortEnd = ({oldIndex, newIndes}) => {
+        this.setState(({colors}) => ({
+            color: arrayMove(colors, oldIndex, newIndex),
         }))
     }
 

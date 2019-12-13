@@ -15,6 +15,7 @@ import DraggableColorBox from "./DraggableColorBox"
 import DraggableColorList from "./DraggableColorList"
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
 import { arrayMove } from 'react-sortable-hoc'
+import { arrayMove } from "react-sortable-hoc"
 
 
 const drawerWidth = 400
@@ -146,9 +147,9 @@ const styles = theme => ({
             colors: this.state.colors.filter(color => color.name !== colorName)
         })
     }
-    onSortEnd = ({oldIndex, newIndex}) => {
-        this.setState(({ colors }) => ({
-            colors: arrayMove(colors, oldIndex, newIndex)
+    onSortEnd = ({oldIndex, newIndes}) => {
+        this.setState(({colors}) => ({
+            color: arrayMove(colors, oldIndex, newIndex),
         }))
     }
 
@@ -220,7 +221,7 @@ const styles = theme => ({
             })}
           >
             <div className={classes.drawerHeader} />
-                <DraggableColorList axis="xy" colors={this.state.colors} removeColor={this.removeColor} onSortEnd={this.onSortEnd} />
+                <DraggableColorList axis="xy" colors={this.state.colors} removeColor={this.removeColor} />
           </main>
         </div>
       );

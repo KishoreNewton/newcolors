@@ -148,7 +148,7 @@ const styles = theme => ({
     }
     onSortEnd = ({oldIndex, newIndex}) => {
         this.setState(({ colors }) => ({
-            colors: arrayMove(colors, oldIndex, newIndex)
+            color: arrayMove(colors, oldIndex, newIndex),
         }))
     }
 

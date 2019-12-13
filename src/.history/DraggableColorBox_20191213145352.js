@@ -37,7 +37,7 @@ const styles = {
     }
 
 
-const DraggableColorBox = SortableElement((props) => {
+function DraggableColorBox(props) {
     const { classes, color, handleClick } = props
     return (
         <div style={{backgroundColor: color}} className={classes.root}>      
@@ -47,6 +47,6 @@ const DraggableColorBox = SortableElement((props) => {
             </div>
         </div>
     )
-})
+}
 
 export default withStyles(styles)(DraggableColorBox)
