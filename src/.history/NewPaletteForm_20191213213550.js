@@ -168,7 +168,7 @@ const styles = theme => ({
 
     render() {
       const { classes, theme, maxColors } = this.props;
-      const { open, colors } = this.state;
+      const { open } = this.state;
   
       return (
         <div className={classes.root}>

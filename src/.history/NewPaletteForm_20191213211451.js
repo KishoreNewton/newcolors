@@ -78,9 +78,6 @@ const styles = theme => ({
   });
   
   class NewPaletteForm extends Component {
-      static defaultProps = {
-          maxColors: 20
-      }
       constructor(props){
           super(props)
           this.state =  {
@@ -96,7 +93,6 @@ const styles = theme => ({
           this.handleSubmit = this.handleSubmit.bind(this)
           this.removeColor = this.removeColor.bind(this)
           this.clearColors = this.clearColors.bind(this)
-          this.addRandomColor = this.addRandomColor.bind(this)
       }
       componentDidMount() {
         ValidatorForm.addValidationRule('isColorNameUnique', (value) => 
@@ -160,15 +156,12 @@ const styles = theme => ({
         this.setState({ colors: [] })
     }
     addRandomColor(){
-        const allColors = this.props.palettes.map(p => p.colors).flat()
-        let rand = Math.floor(Math.random() * allColors.length)
-        const randomColor = allColors[rand]
-        this.setState({ colors: [...this.state.colors, randomColor]})
+        const allColors = this.props.palettes.map(p => p.colors)
     }
 
     render() {
-      const { classes, theme, maxColors } = this.props;
-      const { open, colors } = this.state;
+      const { classes, theme } = this.props;
+      const { open } = this.state;
   
       return (
         <div className={classes.root}>
@@ -223,7 +216,7 @@ const styles = theme => ({
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
             <ValidatorForm onSubmit={this.addNewColor}> 
                 <TextValidator  value={this.state.newColorName} name='newColorName' onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
-                <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit" disabled={colors.length  >= maxColors}>ADD</Button>
+                <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit">ADD</Button>
             </ValidatorForm>
             
             

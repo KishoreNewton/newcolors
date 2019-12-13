@@ -167,8 +167,8 @@ const styles = theme => ({
     }
 
     render() {
-      const { classes, theme, maxColors } = this.props;
-      const { open, colors } = this.state;
+      const { classes, theme } = this.props;
+      const { open } = this.state;
   
       return (
         <div className={classes.root}>
@@ -223,7 +223,7 @@ const styles = theme => ({
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
             <ValidatorForm onSubmit={this.addNewColor}> 
                 <TextValidator  value={this.state.newColorName} name='newColorName' onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
-                <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit" disabled={colors.length  >= maxColors}>ADD</Button>
+                <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit" disabled={maxColors}>ADD</Button>
             </ValidatorForm>
             
             
