@@ -84,14 +84,8 @@ class PaletteFormNav extends Component {
               <Typography variant="h6" color="inherit" noWrap>
                 CREATE YOU OWN
               </Typography>
+             
             </Toolbar>
-            <div className={classes.navBtns}>
-              <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
-              <TextValidator value={this.state.newPaletteName} name="newPaletteName" label="Palette Name" onChange={this.handleChange} validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
-              <Button variant="contained" color="primary" type="submit" >Save Palette</Button>
-              </ValidatorForm>
-             <Link to="/">BACK</Link>
-             </div>
           </AppBar>
       </div>
     )

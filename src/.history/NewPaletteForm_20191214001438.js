@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import PaletteFormNav from "./PaletteFormNav"
-import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import ColorPickerForm from "./ColorPickerForm"
 import Typography from '@material-ui/core/Typography';
@@ -144,7 +143,7 @@ const styles = theme => ({
   
       return (
         <div className={classes.root}>
-        <PaletteFormNav open={open} palettes={palettes} handleSubmit={this.handleSubmit} handleDrawerOpen={this.handleDrawerOpen} />
+        <PaletteFormNav open={open} classes={classes} palettes={palettes} handleSubmit={this.handleSubmit} handleDrawerOpen={this.handleDrawerOpen} />
           <Drawer
             className={classes.drawer}
             variant="persistent"

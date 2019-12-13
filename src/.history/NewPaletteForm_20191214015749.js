@@ -144,7 +144,7 @@ const styles = theme => ({
   
       return (
         <div className={classes.root}>
-        <PaletteFormNav open={open} palettes={palettes} handleSubmit={this.handleSubmit} handleDrawerOpen={this.handleDrawerOpen} />
+        <PaletteFormNav open={open}  palettes={palettes} handleSubmit={this.handleSubmit} handleDrawerOpen={this.handleDrawerOpen} />
           <Drawer
             className={classes.drawer}
             variant="persistent"
