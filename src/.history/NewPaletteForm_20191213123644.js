@@ -100,10 +100,6 @@ const styles = theme => ({
             this.state.colors.every(({ color }) => color !== this.state.currentColor
             )
         );
-        ValidatorForm.addValidationRule('isPaletteNameUnique', (value) => 
-            this.props.palettes.every(({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()
-            )
-        );
     }
     state = {
       open: false,
@@ -122,7 +118,7 @@ const styles = theme => ({
     }
 
     addNewColor(){
-        const newColor = { color: this.state.currentColor, name: this.state.newColorName }
+        const newColor = { color: this.state.currentColor, name: this.state.newName }
         this.setState({colors: [...this.state.colors, newColor], newColorName: ""})
     }
 
@@ -165,10 +161,9 @@ const styles = theme => ({
                 Persistent drawer
               </Typography>
               <ValidatorForm onSubmit={this.handleSubmit}>
-              <TextValidator value={this.state.newPaletteName} name="newPaletteName" label="Palette Name" onChange={this.handleChange} validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
-              <Button variant="contained" color="primary" type="submit" >Save Palette</Button>
+              <TextValidator value={this.state.newPaletteName} name="newPaletteName" label="Palette Name" onChange={this.handleChange} />
               </ValidatorForm>
-             
+              <Button variant="contained" type="submit" color="primary" onClick={this.handleSubmit}>Save Palette</Button>
             </Toolbar>
           </AppBar>
           <Drawer

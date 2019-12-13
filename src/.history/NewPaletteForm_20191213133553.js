@@ -165,10 +165,9 @@ const styles = theme => ({
                 Persistent drawer
               </Typography>
               <ValidatorForm onSubmit={this.handleSubmit}>
-              <TextValidator value={this.state.newPaletteName} name="newPaletteName" label="Palette Name" onChange={this.handleChange} validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
-              <Button variant="contained" color="primary" type="submit" >Save Palette</Button>
+              <TextValidator value={this.state.newPaletteName} name="newPaletteName" label="Palette Name" onChange={this.handleChange} validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Color name must be unique"]} />
               </ValidatorForm>
-             
+              <Button variant="contained" color="primary">Save Palette</Button>
             </Toolbar>
           </AppBar>
           <Drawer
