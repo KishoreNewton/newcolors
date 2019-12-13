@@ -56,7 +56,7 @@ class PaletteFormNav extends Component {
         })
     }
   render() {
-      const { classes, open, palettes, handleSubmit } = this.props
+      const { classes, open } = this.props
       const {newPaletteName} = this.state 
     return (
       <div className={classes.root}>
@@ -82,7 +82,7 @@ class PaletteFormNav extends Component {
               </Typography>
             </Toolbar>
             <div className={classes.navBtns}>
-              <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
+              <PaletteMetaForm />
              <Link to="/">BACK</Link>
              </div>
           </AppBar>

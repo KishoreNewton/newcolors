@@ -82,7 +82,7 @@ class PaletteFormNav extends Component {
               </Typography>
             </Toolbar>
             <div className={classes.navBtns}>
-              <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
+              <PaletteMetaForm palettes={palettes} />
              <Link to="/">BACK</Link>
              </div>
           </AppBar>
