@@ -84,7 +84,7 @@ const styles = theme => ({
         width: "100%"
     },
     button: {
-        width: "48%",
+        width: "48%,"
     }
   });
   
@@ -176,7 +176,7 @@ const styles = theme => ({
               </IconButton>
             </div>
             <div className={classes.container}>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4">
                 Create Your Colors
             </Typography>
             <div className={classes.buttons}>

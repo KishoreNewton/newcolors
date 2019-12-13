@@ -10,14 +10,11 @@ const styles = {
         marginTop: "2rem"
     },
     addColor: {
-        width: "100%",
+        width: "70%",
+        height: "35%",
         padding: "1rem",
         marginTop: "1rem",
         fontSize: "2rem"
-    },
-    colorNameInput:{
-        width: "100%",
-        height: "70px"
     }
  }
 
@@ -59,7 +56,7 @@ class ColorPickerForm extends Component {
       <div>
         <ChromePicker color={currentColor} onChangeComplete={this.updateCurrentColor} className={classes.picker} />
             <ValidatorForm onSubmit={this.handleSubmit} ref='form'> 
-                <TextValidator margin="normal" placeholder="color name" variant="filled" className={classes.colorNameInput}  value={newColorName} name='newColorName' onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
+                <TextValidator  value={newColorName} name='newColorName' onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
                 <Button className={classes.addColor} variant="contained" color="primary" style={{backgroundColor: paletteIsFull ? "grey" : this.state.currentColor}} type="submit" disabled={paletteIsFull}>ADD</Button>
             </ValidatorForm>
       </div>
