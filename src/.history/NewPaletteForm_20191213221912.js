@@ -224,7 +224,7 @@ const styles = theme => ({
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
             <ValidatorForm onSubmit={this.addNewColor}> 
                 <TextValidator  value={this.state.newColorName} name='newColorName' onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
-                <Button variant="contained" color="primary" style={{backgroundColor: paletteIsFull ? "grey" : this.state.currentColor}} type="submit" disabled={paletteIsFull}>ADD</Button>
+                <Button variant="contained" color="primary" style={{backgroundColor: paletteIsFull ? "" : this.state.currentColor}} type="submit" disabled={paletteIsFull}>ADD</Button>
             </ValidatorForm>
             
             

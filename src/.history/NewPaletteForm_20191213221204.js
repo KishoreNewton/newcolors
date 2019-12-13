@@ -167,9 +167,8 @@ const styles = theme => ({
     }
 
     render() {
-      const { classes, theme, maxColors } = this.props
-      const { open, colors } = this.state
-      const paletteIsFull = colors.length  >= maxColors
+      const { classes, theme, maxColors } = this.props;
+      const { open, colors } = this.state;
   
       return (
         <div className={classes.root}>
@@ -219,12 +218,12 @@ const styles = theme => ({
             </Typography>
             <div>
                 <Button variant="contained" color="secondary" onClick={this.clearColors} >CLEAR</Button>
-                <Button variant="contained" color="primary" onClick={this.addRandomColor} disabled={paletteIsFull}>RANDOM</Button>
+                <Button variant="contained" color="primary" onClick={this.addRandomColor} >RANDOM</Button>
             </div>    
             <ChromePicker color={this.state.currentColor} onChangeComplete={this.updateCurrentColor} />
             <ValidatorForm onSubmit={this.addNewColor}> 
                 <TextValidator  value={this.state.newColorName} name='newColorName' onChange={this.handleChange} validators={["required", "isColorNameUnique", "isColorUnique"]} errorMessages={["this field is required", "Color name must be unique", "Color already taken"]} />
-                <Button variant="contained" color="primary" style={{backgroundColor: paletteIsFull ? "grey" : this.state.currentColor}} type="submit" disabled={paletteIsFull}>ADD</Button>
+                <Button variant="contained" color="primary" style={{backgroundColor: this.state.currentColor}} type="submit" disabled={colors.length  >= maxColors}>ADD</Button>
             </ValidatorForm>
             
             
