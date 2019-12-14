@@ -105,7 +105,7 @@ class PaletteFormNav extends Component {
             <div className={classes.navBtns}>
               
              <Link to="/" className={classes.link}>BACK</Link>
-             <Button variant="contained" color="primary" onClick={this.showForm} className={classes.button}>
+             <Button variant="contained" color="primary" onClick={this.hide} className={classes.button}>
               Open form dialog
             </Button>
              </div>

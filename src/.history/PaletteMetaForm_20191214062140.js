@@ -41,19 +41,18 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
     
       render() {
           const {newPaletteName} = this.state
-          const { hideForm, handleSubmit } = this.props
         return (
             <Dialog
               open={this.state.open}
-              onClose={hideForm}
+              onClose={this.handleClose}
               aria-labelledby="form-dialog-title"
             >
              
               <DialogTitle id="form-dialog-title">Palette Name</DialogTitle>
-              <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
+              <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
                     <TextValidator value={newPaletteName} name="newPaletteName" label="Enter a unique name" onChange={this.handleChange} margin="normal" fullWidth validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
               <DialogActions>
-                <Button onClick={hideForm} color="primary">
+                <Button onClick={this.props.hideForm} color="primary">
                   Cancel
                 </Button>
                 <Button variant="contained" color="primary" type="submit" >Save Palette</Button>
