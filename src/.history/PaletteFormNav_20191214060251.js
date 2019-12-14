@@ -24,7 +24,6 @@ const styles = theme => ({
         }),
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
         height: "64px"
       },
       appBarShift: {
@@ -40,19 +39,7 @@ const styles = theme => ({
         marginRight: 20,
       },
       navBtns: {
-        marginRight: "1rem",
-      },
-      button: {
-          margin: "0 0.5rem"
-      },
-      link: {
-          color: "black",
-          textDecoration: "none",
-          fontWeight: "700",
-          cursor: "pointer",
-          fontSize: "18px",
-          padding: "1rem",
-          margin: "1rem",
+        marginRight: "1rem"
       }
 })
 
@@ -100,8 +87,8 @@ class PaletteFormNav extends Component {
             </Toolbar>
             <div className={classes.navBtns}>
               
-             <Link to="/" className={classes.link}>BACK</Link>
-             <Button variant="contained" color="primary" onClick={this.showForm} className={classes.button}>
+             <Link to="/">BACK</Link>
+             <Button variant="contained" color="primary" onClick={this.showForm}>
               Open form dialog
             </Button>
              </div>

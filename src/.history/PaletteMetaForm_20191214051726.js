@@ -13,7 +13,7 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
     constructor(props){
         super(props)
         this.state = {
-            open: true, 
+            open: false, 
             newPaletteName: ""
         }
         this.handleChange = this.handleChange.bind(this)
@@ -42,6 +42,10 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
       render() {
           const {newPaletteName} = this.state
         return (
+          <div>
+            <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
+              Open form dialog
+            </Button>
             <Dialog
               open={this.state.open}
               onClose={this.handleClose}
@@ -50,7 +54,7 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
              
               <DialogTitle id="form-dialog-title">Palette Name</DialogTitle>
               <ValidatorForm onSubmit={() => this.props.handleSubmit(newPaletteName)}>
-                    <TextValidator value={newPaletteName} name="newPaletteName" label="Enter a unique name" onChange={this.handleChange} margin="normal" fullWidth validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
+                    <TextValidator value={newPaletteName} name="newPaletteName" label="Palette Name" onChange={this.handleChange} fullWidth validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
               <DialogActions>
                 <Button onClick={this.handleClose} color="primary">
                   Cancel
@@ -59,6 +63,7 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
               </DialogActions>
               </ValidatorForm>
             </Dialog>
+          </div>
         );
       }
     }

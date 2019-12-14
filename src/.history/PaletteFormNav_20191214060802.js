@@ -24,7 +24,6 @@ const styles = theme => ({
         }),
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
         height: "64px"
       },
       appBarShift: {
@@ -44,15 +43,6 @@ const styles = theme => ({
       },
       button: {
           margin: "0 0.5rem"
-      },
-      link: {
-          color: "black",
-          textDecoration: "none",
-          fontWeight: "700",
-          cursor: "pointer",
-          fontSize: "18px",
-          padding: "1rem",
-          margin: "1rem",
       }
 })
 

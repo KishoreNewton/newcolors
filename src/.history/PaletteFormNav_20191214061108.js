@@ -24,7 +24,6 @@ const styles = theme => ({
         }),
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
         height: "64px"
       },
       appBarShift: {
@@ -52,7 +51,7 @@ const styles = theme => ({
           cursor: "pointer",
           fontSize: "18px",
           padding: "1rem",
-          margin: "1rem",
+          margin: "1rem"
       }
 })
 

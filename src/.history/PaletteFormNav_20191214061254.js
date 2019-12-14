@@ -24,7 +24,7 @@ const styles = theme => ({
         }),
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "center"
         height: "64px"
       },
       appBarShift: {

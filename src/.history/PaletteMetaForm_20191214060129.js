@@ -13,7 +13,7 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
     constructor(props){
         super(props)
         this.state = {
-            open: true, 
+            open: false, 
             newPaletteName: ""
         }
         this.handleChange = this.handleChange.bind(this)
@@ -36,7 +36,7 @@ import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
     }
 
     handleClose = () => {
-    this.setState({ open: false });
+    this.setState({ open: true });
       }
     
       render() {
