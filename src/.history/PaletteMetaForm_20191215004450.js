@@ -7,8 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator"
-import 'emoji-mart/css/emoji-mart.css'
-import { Picker } from 'emoji-mart'
+import { Picker } from "emoji-mart"
 
 
  class PaletteMetaForm extends Component {
@@ -52,7 +51,7 @@ import { Picker } from 'emoji-mart'
             >
              
               <DialogTitle id="form-dialog-title">Palette Name</DialogTitle>
-              <Picker set='emojione' showSkinTones={false} showPreview={false} />
+              <Picker />
               <ValidatorForm onSubmit={() => handleSubmit(newPaletteName)}>
                     <TextValidator value={newPaletteName} name="newPaletteName" label="Enter a unique name" onChange={this.handleChange} margin="normal" fullWidth validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
               <DialogActions>
