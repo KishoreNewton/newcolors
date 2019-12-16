@@ -24,6 +24,14 @@ export default {
             width: "100%",
             height: "10%",
         },
+        [sizes.down("md")]: {
+            width: "50%",
+            height: "20%",
+        },
+        [sizes.down("lg")]: {
+            width: "25%",
+            height: "33.33%",
+        },
         "&a": {
             width: "100px",
             height: "30px",

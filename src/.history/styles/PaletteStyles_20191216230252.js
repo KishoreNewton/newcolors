@@ -20,10 +20,6 @@ export default {
         marginBottom: "-3.9px",
         opacity: "1",
         backgroundColor: "white",
-        [sizes.down("xs")]: {
-            width: "100%",
-            height: "10%",
-        },
         "&a": {
             width: "100px",
             height: "30px",
@@ -42,5 +38,6 @@ export default {
             border: "none",
             cursor: "pointer",
         },
-    },
+        [sizes.down("xs")]
+    }
 }
