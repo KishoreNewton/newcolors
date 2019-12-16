@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import MiniPalette from "./MiniPalette"
 import { withStyles } from "@material-ui/styles"
 import styles from "./styles/PaletteListStyles"
-import { CSSTransition, TransitionGroup } from 'react-transition-group' 
+import { CSSTransition } from 'react-transition-group
 class PalletList extends Component {
   goToPalette(id){
     this.props.history.push(`/palette/${id}`)
@@ -19,13 +19,11 @@ class PalletList extends Component {
                   CREATE YOUR OWN
                 </Link>
             </nav>
-            <TransitionGroup className={classes.palettes}>
+            <div className={classes.palettes}>
               {palettes.map(palette => (
-                <CSSTransition key={palette.id} classNames='fade' timeout={3000}>
                   <MiniPalette {...palette}  handleClick={() => this.goToPalette(palette.id)} />
-                </CSSTransition>  
               ))}
-            </TransitionGroup>
+            </div>
         </div>
       </div>
     )

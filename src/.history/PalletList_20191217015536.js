@@ -19,6 +19,7 @@ class PalletList extends Component {
                   CREATE YOUR OWN
                 </Link>
             </nav>
+            <div >
             <TransitionGroup className={classes.palettes}>
               {palettes.map(palette => (
                 <CSSTransition key={palette.id} classNames='fade' timeout={3000}>
@@ -26,6 +27,7 @@ class PalletList extends Component {
                 </CSSTransition>  
               ))}
             </TransitionGroup>
+            </div>
         </div>
       </div>
     )

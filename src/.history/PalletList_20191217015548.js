@@ -26,6 +26,7 @@ class PalletList extends Component {
                 </CSSTransition>  
               ))}
             </TransitionGroup>
+            </div>
         </div>
       </div>
     )
