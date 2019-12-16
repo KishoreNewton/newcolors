@@ -39,7 +39,8 @@ class App extends Component {
   return (
     <Route render={({location}) => (
       <TransitionGroup>
-      <CSSTransition  key={location.key}>
+      <CSSTransition timeout={300}
+        classNames="alert" key={location.key}>
             <Switch location={location}>
             <Route exact path="/create-new-colors" render={(routeProps) =><div className="page"><NewPaletteForm savePalette={this.savePalette} palettes={this.state.palettes}  {...routeProps} /></div> } />
             <Route path="/palette/:paletteId/:colorId" render={routeProps => (

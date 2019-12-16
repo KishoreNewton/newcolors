@@ -7,7 +7,7 @@ import PalletList from "./PalletList"
 import SingleColorPalette from "./SingleColorPalette"
 import NewPaletteForm from "./NewPaletteForm"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
-import "./App.css"
+import "App.css"
 
 
 class App extends Component {
@@ -39,7 +39,7 @@ class App extends Component {
   return (
     <Route render={({location}) => (
       <TransitionGroup>
-      <CSSTransition  key={location.key}>
+      <CSSTransition classNames='fade' timeout={500} key={location.key}>
             <Switch location={location}>
             <Route exact path="/create-new-colors" render={(routeProps) =><div className="page"><NewPaletteForm savePalette={this.savePalette} palettes={this.state.palettes}  {...routeProps} /></div> } />
             <Route path="/palette/:paletteId/:colorId" render={routeProps => (
