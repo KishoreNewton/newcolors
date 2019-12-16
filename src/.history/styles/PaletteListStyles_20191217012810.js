@@ -7,8 +7,7 @@ export default {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
-        /* background by SVGBackgrounds.com */
-        backgroundColor: "#0d00ff",
+        background-color: #0d00ff;
         backgroundImage: `url(${bg})`
     },
     container: {
