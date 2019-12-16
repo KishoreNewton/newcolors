@@ -14,12 +14,7 @@ export default {
             opacity: "1" 
         },
         [sizes.down("lg")]: {
-            width: "25%",
-            height: props => props.showingFullPalette ? "20%" : "10%",
-        },
-        [sizes.down("md")]: {
-            width: "50%",
-            height: props => props.showingFullPalette ? "10%" : "10%",
+
         },
         [sizes.down("xs")]: {
             width: "100%",
