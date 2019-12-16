@@ -10,7 +10,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import { Button } from '@material-ui/core' 
 import DraggableColorList from "./DraggableColorList"
 import { arrayMove } from 'react-sortable-hoc'
-import styles from "./styles/NewPaletteFormStyles"
+
+
+
   
   class NewPaletteForm extends Component {
       static defaultProps = {
