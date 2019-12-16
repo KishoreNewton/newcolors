@@ -40,9 +40,9 @@ class App extends Component {
       <TransitionGroup>
       <CSSTransition classNames='fade' timeout={500} key={location.key}>
             <Switch location={location}>
-            <Route exact path="/create-new-colors" render={(routeProps) =><div className="page"><NewPaletteForm savePalette={this.savePalette} palettes={this.state.palettes}  {...routeProps} /></div> } />
+            <Route exact path="/create-new-colors" render={(routeProps) =><Page><NewPaletteForm savePalette={this.savePalette} palettes={this.state.palettes}  {...routeProps} /></div> } />
             <Route path="/palette/:paletteId/:colorId" render={routeProps => (
-              <div className="page"></div><SingleColorPalette colorId={routeProps.match.params.colorId} palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))} />
+              <Page></div><SingleColorPalette colorId={routeProps.match.params.colorId} palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))} />
             )} />
             <Route exact path="/" render={(routeProps) => <PalletList palettes={this.state.palettes} {...routeProps} />} />
             <Route exact path="/palette/:id" render={routeProps => (
