@@ -23,7 +23,7 @@ const styles = {
             },
             [sizes.down("sm")]:{
                 width: "100%",
-                height: "5%"
+                height: "10%"
             }
         },
         boxContent: {

@@ -8,9 +8,7 @@ export default {
         "& .rc-slider-track": {
             backgroundColor: "black !important",
         },
-        [sizes.down("xs")]: {
-            width: "140px"
-        }
+        [sizes.down("xs")]
     },
     NavBar: {
         display: "flex",

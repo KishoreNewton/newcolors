@@ -38,10 +38,7 @@ const styles = theme => ({
         },
       },
       button: {
-          margin: "0 0.5rem",
-          [sizes.down("xs")]: {
-            margin: "0",
-          },
+          margin: "0 0.5rem"
       },
       link: {
           color: "black",

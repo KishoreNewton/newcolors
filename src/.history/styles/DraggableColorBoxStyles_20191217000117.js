@@ -14,16 +14,7 @@ const styles = {
                 transform: "scale(1.3)"
             },
             [sizes.down("lg")]:{
-                width: "25%",
-                height: "20%",
-            },
-            [sizes.down("md")]:{
-                width: "50%",
-                height: "10%"
-            },
-            [sizes.down("sm")]:{
-                width: "100%",
-                height: "5%"
+                width: "25%"
             }
         },
         boxContent: {

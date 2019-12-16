@@ -21,9 +21,9 @@ const styles = {
                 width: "50%",
                 height: "10%"
             },
-            [sizes.down("sm")]:{
-                width: "100%",
-                height: "5%"
+            [sizes.down("md")]:{
+                width: "50%",
+                height: "10%"
             }
         },
         boxContent: {

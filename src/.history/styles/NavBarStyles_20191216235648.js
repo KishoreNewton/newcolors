@@ -7,9 +7,6 @@ export default {
         display: "inline-block",
         "& .rc-slider-track": {
             backgroundColor: "black !important",
-        },
-        [sizes.down("xs")]: {
-            width: "140px"
         }
     },
     NavBar: {
@@ -31,9 +28,6 @@ export default {
         "& a": {
             textDecoration: "none",
             color: "black",
-        },
-        [sizes.down("xs")]:{
-            display: "none",
         }
     },
     selectContainer: {

@@ -9,7 +9,7 @@ export default {
             backgroundColor: "black !important",
         },
         [sizes.down("xs")]: {
-            width: "140px"
+            width: "150xp"
         }
     },
     NavBar: {
