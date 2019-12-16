@@ -20,7 +20,6 @@ import { Picker } from 'emoji-mart'
         }
         this.handleChange = this.handleChange.bind(this)
         this.showEmojiPicker = this.showEmojiPicker.bind(this)
-        this.savePalette = this.savePalette.bind(this)
     }
      componentDidMount() {
         ValidatorForm.addValidationRule('isPaletteNameUnique', (value) => 
@@ -47,20 +46,13 @@ import { Picker } from 'emoji-mart'
         this.setState({ stage: "emoji" })
     }
 
-    savePalette(emoji){
-        console.log(emoji.native)
-        const newPalette = {paletteName: this.state.newPaletteName, emoji: emoji.native}
-        this.props.handleSubmit(newPalette)
-    }
-
       render() {
           const {newPaletteName} = this.state
           const { hideForm, handleSubmit } = this.props
         return (
             <div>
-            <Dialog open={this.state.stage === "emoji"} onClose={hideForm} >
-              <DialogTitle id="form-dialog-title">Select a Palette Emoji</DialogTitle>
-              <Picker title='Pick a palette emoji' set='emojione' showSkinTones={false} showPreview={false} onSelect={this.savePalette}  />
+            <Dialog open={this.state.stage === "emoji"}>
+                <Picker />
             </Dialog>
             <Dialog
               open={this.state.stage === "form"}
@@ -69,6 +61,7 @@ import { Picker } from 'emoji-mart'
             >
              
               <DialogTitle id="form-dialog-title">Palette Name</DialogTitle>
+              <Picker set='emojione' showSkinTones={false} showPreview={false} />
               <ValidatorForm onSubmit={this.showEmojiPicker}>
                     <TextValidator value={newPaletteName} name="newPaletteName" label="Enter a unique name" onChange={this.handleChange} margin="normal" fullWidth validators={["required", "isPaletteNameUnique"]} errorMessages={["this field is required", "Palette name must be unique"]} />
               <DialogActions>

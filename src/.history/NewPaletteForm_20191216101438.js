@@ -128,8 +128,7 @@ const styles = theme => ({
         })
     }
     handleSubmit(newPalette){
-        newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, "-")
-        newPalette.colors = this.state.colors
+        newPalette.id = newPaletteName.toLowerCase()
         this.props.savePalette(newPalette)
         this.props.history.push("/")
     }

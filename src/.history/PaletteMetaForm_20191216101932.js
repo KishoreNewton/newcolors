@@ -58,9 +58,8 @@ import { Picker } from 'emoji-mart'
           const { hideForm, handleSubmit } = this.props
         return (
             <div>
-            <Dialog open={this.state.stage === "emoji"} onClose={hideForm} >
-              <DialogTitle id="form-dialog-title">Select a Palette Emoji</DialogTitle>
-              <Picker title='Pick a palette emoji' set='emojione' showSkinTones={false} showPreview={false} onSelect={this.savePalette}  />
+            <Dialog open={this.state.stage === "emoji"}>
+             <Picker set='emojione' showSkinTones={false} showPreview={false} onSelect={this.savePalette} />
             </Dialog>
             <Dialog
               open={this.state.stage === "form"}
