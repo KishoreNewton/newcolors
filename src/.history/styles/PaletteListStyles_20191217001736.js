@@ -15,7 +15,7 @@ export default {
         flexDirection: "column",
         flexWrap: 'wrap',
         [sizes.down("xl")]:{
-          width: "70%",
+          width: "80%",
         }
     },
     nav: {

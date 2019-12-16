@@ -15,7 +15,7 @@ export default {
         flexDirection: "column",
         flexWrap: 'wrap',
         [sizes.down("xl")]:{
-          width: "70%",
+          width: "80%",
         }
     },
     nav: {
@@ -34,10 +34,7 @@ export default {
       width: "100%",
       display: "grid",
       gridTemplateColumns: "repeat(3, 30%)",
-      gridGap: "1.5rem",
-      [sizes.down("md")]: {
-        gridTemplateColumns: "repeat(2, 50%)",
-      },
+      gridGap: "5%"
       [sizes.down("xs")]: {
         gridTemplateColumns: "repeat(1, 100%)",
       }
