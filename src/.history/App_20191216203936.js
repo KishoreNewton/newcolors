@@ -24,12 +24,7 @@ class App extends Component {
   }
 
   savePalette(newPalette){
-    this.setState({palettes: [...this.state.palettes, newPalette]}, this.syncLocalStorage)
-  }
-
-  syncLocalStorage(){
-    //save palettes to local storage
-    window.localStorage.setItem("palettes", JSON.stringify(this.state.palettes))
+    this.setState({palettes: [...this.state.palettes, newPalette]})
   }
 
   render(){

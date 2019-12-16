@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   savePalette(newPalette){
-    this.setState({palettes: [...this.state.palettes, newPalette]}, this.syncLocalStorage)
+    this.setState({palettes: [...this.state.palettes, newPalette]})
   }
 
   syncLocalStorage(){
